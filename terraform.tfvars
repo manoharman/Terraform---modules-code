@@ -1,4 +1,4 @@
-NAME          = "Wave-cycle"
+NAME          = "my-vpc"
 CIDR          = "190.0.0.0/16"
 AZ            = ["us-west-2a"]
 SUBNET        = ["190.0.0.0/24"]
