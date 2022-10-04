@@ -1,4 +1,4 @@
-resource "tls_private_key" "finalkey" {
+resource "tls_private_key" "wave" {
 algorithm = "RSA"
 }
 
@@ -9,11 +9,11 @@ key_name = var.NAME
 public_key = trimspace(tls_private_key.wave.public_key_openssh)
 }
 
-resource "null_resource" "key-finalkey" {
+resource "null_resource" "key-wave" {
   provisioner "local-exec" {
     command = <<-EOT
-      sudo echo '${tls_private_key.finalkey.private_key_pem}' > ./'${var.finalkey-key}'.pem
-      sudo chmod 400 ./'${var.finalkey-key}'.pem
+      sudo echo '${tls_private_key.wave.private_key_pem}' > ./'${var.wave-key}'.pem
+      sudo chmod 400 ./'${var.wave-key}'.pem
     EOT
   }
 }
